@@ -9,6 +9,6 @@ public class UnitTest1
     [TestMethod]
     public void TestMethod1()
     {
-        Assert.AreEqual(AppClass.testName,"App Class" );
+        Assert.AreEqual(AppClass.testName,"App Test" );
     }
 }
