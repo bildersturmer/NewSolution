@@ -2,6 +2,6 @@
 
 public class AppClass
 {
-    public static string name = "App Test";
+    public static string testName = "App Test";
 
 }
