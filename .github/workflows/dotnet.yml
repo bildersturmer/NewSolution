@@ -24,10 +24,15 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
-    - name: Test with dotnet    
-      run: dotnet test --no-restore --collect:"XPlat Code Coverage" --results-directory "TestResults-${{ matrix.dotnet-version }}"
+    - name: Test Coverage with dotnet    
+      run: dotnet test --no-restore --collect:"XPlat Code Coverage" --results-directory "CoverageResults-${{ matrix.dotnet-version }}"
     - name: Test again with dotnet    
       run: dotnet test --no-restore --logger trx --results-directory "TestResults-${{ matrix.dotnet-version }}"
+    - name: Upload dotnet Coverage results
+      uses: actions/upload-artifact@v4
+      with:
+        name: dotnet-results-${{ matrix.dotnet-version }}
+        path: CoverageResults-${{ matrix.dotnet-version }}
     - name: Upload dotnet test results
       uses: actions/upload-artifact@v4
       with:
