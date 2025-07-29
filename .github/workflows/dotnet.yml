@@ -31,7 +31,7 @@ jobs:
     - name: Upload dotnet Coverage results
       uses: actions/upload-artifact@v4
       with:
-        name: dotnet-results-${{ matrix.dotnet-version }}
+        name: dotnet-coverage-results-${{ matrix.dotnet-version }}
         path: CoverageResults-${{ matrix.dotnet-version }}
     - name: Upload dotnet test results
       uses: actions/upload-artifact@v4
