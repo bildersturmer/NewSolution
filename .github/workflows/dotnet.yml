@@ -24,10 +24,8 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
-#  run: dotnet test --no-restore --logger trx --results-directory "TestResults-${{ matrix.dotnet-version }}" --collect:"XPlat Code Coverage"
-#  run: dotnet test --no-restore --logger trx --results-directory "TestResults-${{ matrix.dotnet-version }}" --collect:"XPlat Code Coverage" --results-directory "TestResults-${{ matrix.dotnet-version }}"
     - name: Test with dotnet    
-    run: dotnet test --no-restore --collect:"XPlat Code Coverage" --results-directory "TestResults-${{ matrix.dotnet-version }}"
+      run: dotnet test --no-restore --collect:"XPlat Code Coverage" --results-directory "TestResults-${{ matrix.dotnet-version }}"
     - name: Upload dotnet test results
       uses: actions/upload-artifact@v4
       with:
